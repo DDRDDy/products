@@ -5,8 +5,14 @@ while True:
 		break
 	price = input('請輸入價格:') 
 	products.append([name, price])	#小清單速寫
-
 print(products)
 
-products[0][0]
+for p in products:
+	print(p[0], '的價格是', p[1])
+
+#寫入檔案
+with open('products.csv', 'w', encoding = 'utf-8') as f:
+	f.write('商品,價格\n') #欄位名稱
+	for p in products:
+		f.write(p[0] + ',' + p[1] + '\n')
 
